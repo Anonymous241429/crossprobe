@@ -1,0 +1,37 @@
+#!/usr/bin/python
+from scapy.all import *
+import time, sys
+pkts = rdpcap(sys.argv[1])
+clk = pkts[0].time
+for p in pkts:
+   #time.sleep(float(p.time - clk))
+   #clk = p.time
+   time.sleep(1/10)
+   #if p.haslayer(IP) and p.haslayer(Raw):
+   #if p.haslayer(Dot11Elt[2]) and p[RadioTap].mac_timestamp==4013760052:
+   		#	if (p[IP].src=='192.168.43.2' and p[IP].dst=='192.168.43.255'):
+		#			if p.haslayer(UDP):
+		#				print(p)
+		#				t=p[Raw].load.split("{")
+		#				print(t)
+		#				p1=t[1].split(",")
+		#				print(p1[2])
+			#			sport_new=p[UDP].sport
+			#	        	print(sport_new)
+			#			k=p[Dot11].SC
+		        #               	p[Dot11].SC=k+32
+			#			print(k)
+		#				p[Raw].load=t[0]+"{"+"\"passwd\":\"cebh1234\""+","+p1[1]+","+"\"ssid\":\"cyberes\""+","+p1[3]
+   #if p.haslayer(Dot11Elt[2]) and p[RadioTap].mac_timestamp==4013760052:
+	#					print(p)
+	##					print(t)
+	#					p1=t[1].split(",")
+	#					print(p1[2])
+	#					p[Dot11Elt][2].info=t[0]+"{"+"\"passwd\":\"cebh1234\""+","+p1[1]+","+"\"ssid\":\"cyberes\""+","+p1[3]
+   #if p[RadioTap].mac_timestamp==79328385621:
+#	#p[Raw].load="set_WIFI1::ssid=cyberes;pass=cebh1234;\n"
+ #       print("hacked")
+   sendp(p,iface="wlx00117f1bf2cb")
+
+
+
